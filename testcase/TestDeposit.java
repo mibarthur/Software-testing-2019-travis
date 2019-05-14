@@ -34,8 +34,11 @@ public class TestDeposit {
 		// 從1949存錢到昭和64, 存198178
 		// 利率都是3%
 		double expected = 0;
-
-		// when...
+		
+		when(userA.depositAmount()).thenReturn(198178);
+		when(userA.depositInterest(anyint())).thenReturn(0.03);
+		when(userA.expireEra()).thenReturn("昭和");
+		when(userA.expireYear()).thenReturn(64);
 
 		Deposit deposit = new Deposit(1949);
 		String result = deposit.deposit(userA);
@@ -47,7 +50,10 @@ public class TestDeposit {
 		// 從老師的年代到助教的年代,存一年薪水18000
 		// 利率都是5%
 
-		// when...
+		when(userA.depositAmount()).thenReturn(18000);
+		when(userA.depositInterest(anyint())).thenReturn(0.05);
+		when(userA.expireEra()).thenReturn("昭和");
+		when(userA.expireYear()).thenReturn(64);
 
 		Deposit deposit = new Deposit(1974);
 		String result = deposit.deposit(userA);
