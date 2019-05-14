@@ -52,8 +52,8 @@ public class TestDeposit {
 
 		when(userA.depositAmount()).thenReturn(18000);
 		when(userA.depositInterest(anyInt())).thenReturn(0.05);
-		when(userA.expireEra()).thenReturn("昭和");
-		when(userA.expireYear()).thenReturn(69);
+		when(userA.expireEra()).thenReturn("平成");
+		when(userA.expireYear()).thenReturn(6);
 
 		Deposit deposit = new Deposit(1974);
 		String result = deposit.deposit(userA);
