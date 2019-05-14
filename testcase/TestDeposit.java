@@ -36,7 +36,7 @@ public class TestDeposit {
 		double expected = 0;
 		
 		when(userA.depositAmount()).thenReturn(198178);
-		when(userA.depositInterest(geq())).thenReturn(0.03);
+		when(userA.depositInterest(anyInt())).thenReturn(0.03);
 		when(userA.expireEra()).thenReturn("昭和");
 		when(userA.expireYear()).thenReturn(64);
 
@@ -51,7 +51,7 @@ public class TestDeposit {
 		// 利率都是5%
 
 		when(userA.depositAmount()).thenReturn(18000);
-		when(userA.depositInterest(geq())).thenReturn(0.05);
+		when(userA.depositInterest(anyInt())).thenReturn(0.05);
 		when(userA.expireEra()).thenReturn("昭和");
 		when(userA.expireYear()).thenReturn(69);
 
@@ -66,7 +66,7 @@ public class TestDeposit {
 		// 利率都是10%
 
 		when(userA.depositAmount()).thenReturn(40000);
-		when(userA.depositInterest(geq())).thenReturn(0.10);
+		when(userA.depositInterest(anyInt())).thenReturn(0.10);
 		when(userA.expireEra()).thenReturn("昭和");
 		when(userA.expireYear()).thenReturn(20);
 
