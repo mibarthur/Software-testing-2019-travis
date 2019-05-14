@@ -53,7 +53,7 @@ public class TestDeposit {
 		when(userA.depositAmount()).thenReturn(18000);
 		when(userA.depositInterest(anyint())).thenReturn(0.05);
 		when(userA.expireEra()).thenReturn("昭和");
-		when(userA.expireYear()).thenReturn(64);
+		when(userA.expireYear()).thenReturn(69);
 
 		Deposit deposit = new Deposit(1974);
 		String result = deposit.deposit(userA);
@@ -65,7 +65,10 @@ public class TestDeposit {
 		// 從二戰期間存40000元
 		// 利率都是10%
 
-		// when...
+		when(userA.depositAmount()).thenReturn(40000);
+		when(userA.depositInterest(anyint())).thenReturn(0.10);
+		when(userA.expireEra()).thenReturn("昭和");
+		when(userA.expireYear()).thenReturn(20);
 
 		Deposit deposit = new Deposit(1937);
 		String result = deposit.deposit(userA);
